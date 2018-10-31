@@ -5,8 +5,8 @@ resource "linode_instance" "web-server" {
         group = "Terraform"
         region = "us-west"
         type = "g6-nanode-1"
-        authorized_keys = [ "${var.ssh_fingerprint}" ]
-        root_pass = "Pass@w0rd!"
+        authorized_keys = [ "${var.authorized_key}" ]
+        root_pass = "${var.root_password}"
 
 connection {
     user = "root"
